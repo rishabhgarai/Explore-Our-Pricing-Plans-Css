@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Flexbox Pricing Table</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sedan+SC&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Briem+Hand:wght@100..900&family=Sedan+SC&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Briem+Hand:wght@100..900&family=Jaro:opsz@6..72&family=Sedan+SC&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Briem+Hand:wght@100..900&family=Jaro:opsz@6..72&family=Sedan+SC&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:ital,wght@0,100..900;1,100..900&family=Briem+Hand:wght@100..900&family=Fjalla+One&family=Jaro:opsz@6..72&family=Sedan+SC&display=swap" rel="stylesheet">
+    <style>
+      body {
+        font-family: "Sono", sans-serif;
+      }
+      .pricing-container{
+        display: flex;
+        gap: 20px;
+        justify-content: space-evenly;
+        position: relative;
+        top: 100px;
+      }
+      .pricing-plan{
+        border: 1px solid black;
+        border-radius: 10px;
+        height: 400px;
+        width: 300px;
+        padding: 20px;
+      }
+      .plan-title{
+        text-align: center;
+        padding: 15px 0px;
+        font-style: normal;
+        font-family: "Fjalla One", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: larger;
+        letter-spacing: .4px;
+
+
+      }
+      .plan-price{
+        text-align: center;
+        padding-bottom: 15px ;
+        font-family: "Sedan SC", serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 30px;  
+      }
+      .plan-features{
+        padding-top: 20px;
+        padding-bottom: 30px;
+        font-family: "Briem Hand", cursive;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+        
+      }
+      .plan-button{
+        position: absolute;
+        left: 38%;
+      }
+      body{
+        background-color: #060c21;
+        color: white;
+      }
+      .pricing-plan{
+        position: relative;
+        background: #060c21;
+      }
+      .pricing-plan::before{
+        content: '';
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        right: -2px;
+        bottom: -2px;
+        background: #fff;
+        z-index: -1;
+
+      }
+      .pricing-plan::after{
+        content: '';
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        right: -2px;
+        bottom: -2px;
+        background: #fff;
+        z-index: -2;
+        filter: blur(40px);
+
+      } 
+      .pricing-plan::before,
+      .pricing-plan::after{
+        background: linear-gradient(235deg,#89ff00,#060c21,#00bcd4);
+        
+      }
+      button{
+        position: relative;
+        background-color: #fff;
+        color: white;
+        
+        text-decoration: none;
+        text-transform: uppercase;
+        font-weight: 400;
+        transition: .5s;
+       padding: 5px;   
+     
+      }
+      button:hover{
+        background: var(--clr);
+        letter-spacing: 0.1em;
+       box-shadow:  0 0 35px  var(--clr);
+      }
+      button::before{
+        content: '';
+        position: absolute;
+        inset: 2px;
+        background: #060c21;
+      }
+      button> span{
+        position: relative;
+        z-index: 1;
+      }
+     footer{
+      color: white;
+      text-align: end;
+      clear: both;
+      position: relative;
+      top: 260px;
+      text-decoration: wavy;
+     }
+      
+
+      /* Hint: What can you do with a media query and flexbox? */
+      @media (max-width: 500px) {
+        .pricing-container{
+          flex-direction: column;
+          gap: 30px;
+          align-items: center;
+          position:static;
+          
+          height: auto;
+        }
+        .pricing-plan{
+          height: 350px;
+        }
+        .plan-features{
+        padding-bottom: 9px;
+        }
+        .plan-button{
+        position: relative;
+        left: 40%;
+        top: 5px;
+      }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="pricing-container">
+      <div class="pricing-plan">
+        <div class="plan-title">Basic</div>
+        <div class="plan-price">$9.99/month</div>
+        <hr >
+        <ul class="plan-features">
+          <li>✅ 10GB Storage</li>
+          <li>✅ 1 User</li>
+          <li>✅ 1 Website</li>
+          <li>🚫 Free Domain</li>
+          <li>🚫 Professional Email</li>
+          <li>🚫 24/7Support</li>
+        </ul>
+        <button class="plan-button" style="--clr:#808080"><span>Sign Up</span><i></i></button>
+      </div>
+      <div class="pricing-plan">
+        <div class="plan-title">Standard</div>
+        <div class="plan-price">$19.99/month</div>
+        <hr >
+        <ul class="plan-features">
+          <li>✅ 50GB Storage</li>
+          <li>✅ 5 Users</li>
+          <li>✅ 10 Website</li>
+          <li>🚫 Free Domain</li>
+          <li>✅ Phone &amp; Email Support</li>
+          
+          <li>✅  24/7Support</li>
+        </ul>
+        <button class="plan-button" style="--clr:#1e9bff"><span>Sign Up</span></button>
+      </div>
+      <div class="pricing-plan">
+        <div class="plan-title">Premium</div>
+        <div class="plan-price">$49.99/month</div>
+        <hr >
+        <ul class="plan-features">
+          <li>✅ 100GB Storage</li>
+          <li>✅ 10 Users</li>
+          <li>✅ 50 Website</li>
+          <li>✅ Free Domain</li>
+          <li>✅ Phone & Email Support</li>
+          <li>✅ 24/7 Support</li>
+        </ul>
+        <button class="plan-button" style="--clr:#FFD700"><span>Sign Up</span></button>
+      </div>
+    </div>
+    <footer>Rishabh Garai</footer>
+  </body>
+</html>
